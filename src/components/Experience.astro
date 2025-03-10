@@ -1,0 +1,36 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Noviembre 2023 - actualmente",
+    title: "Desarrolador Web",
+    company: "Prestanómico",
+    description:
+      "En mi puesto actual, me encargo de crear y mantener interfaces de usuario utilizando Vue.js y jQuery, asegurando una experiencia fluida e intuitiva. Integro el frontend con el backend mediante PHP y Laravel para desarrollar y consumir API RESTful. Diseño, implemento y administro bases de datos MySQL, optimizando su rendimiento y seguridad. También gestiono servicios en AWS, como S3 y RDS, para garantizar el despliegue, la escalabilidad y la disponibilidad de las aplicaciones. Además, utilizo Git para el control de versiones y para facilitar la colaboración efectiva con el equipo.",
+  },
+  {
+    date: "Abril 2023 - Noviembre 2023",
+    title: "Desarrollador Frontend",
+    company: "finvero",
+    description:
+      "Como desarrollador frontend, he construido aplicaciones dinámicas utilizando React y Redux, implementando patrones eficientes de gestión de estado. Además, he desarrollado APIs con Express y Node.js para conectar el frontend con servicios backend. Mi enfoque en el diseño responsivo garantiza una experiencia fluida en distintos dispositivos. Trabajo en equipo con diseñadores y desarrolladores backend, asegurando que las soluciones sean escalables y eficientes.",
+  },
+  {
+    date: "Febrero 2023 - Abril 2023",
+    title: "Becario Desarrollador Frontend",
+    company: "finvero",
+    description:
+      "Durante mi experiencia como becario, trabajé en la creación de interfaces web interactivas y responsivas utilizando HTML, CSS y JavaScript. Aprendí a aplicar buenas prácticas para mejorar el rendimiento y la velocidad de carga de las páginas. También colaboré con diseñadores y desarrolladores backend para integrar correctamente las funcionalidades y asegurar una experiencia de usuario óptima.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

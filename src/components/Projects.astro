@@ -1,0 +1,116 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Material UI - Dashboard",
+    description:
+      "Dashboard interactivo creado con Create React App, React y Material UI para una interfaz de usuario moderna y responsiva. Utilicé Nivo para la visualización de datos, lo que permite crear gráficos dinámicos y personalizables. La aplicación ofrece una experiencia fluida y fácil de usar, ideal para gestionar y visualizar información de manera eficiente.",
+    link: "https://material-ui-dashboard-nine.vercel.app/",
+    github: "https://github.com/rogerxm/material-ui-dashboard",
+    image: "/projects/material-ui-dashboard.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "WorldWise App",
+    description:
+      "Aplicación web interactiva construida con Vite y React, que permite a los usuarios seleccionar un punto en el mapa del mundo utilizando Leaflet y registrar los lugares que han visitado. La app ofrece una forma visual y dinámica de marcar lugares en un mapa, proporcionando una experiencia intuitiva para rastrear los viajes y lugares explorados.",
+    link: "https://64f39d9ed2209b2dd1574b53--willowy-queijadas-4438fa.netlify.app/app/cities",
+    github: "https://github.com/rogerxm/WorldWiseApp",
+    image: "/projects/worldwise-app.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "JavaScript Quizz",
+    description:
+      "Quiz de preguntas sobre JavaScript, desarrollada con Vite y React con TypeScript. Lo que la hace especial es el uso de Zustand para la gestión de estado, permitiendo una experiencia de usuario fluida y eficiente. Los usuarios pueden responder preguntas, obtener resultados y mejorar sus conocimientos sobre JavaScript de manera interactiva.",
+    link: "https://javascript-quiz-zustand-gp1prevgp-rogerxms-projects.vercel.app/",
+    github: "https://github.com/rogerxm/javascript-quiz-zustand",
+    image: "/projects/js-quizz.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+
+  {
+    title: "AI Startup Landing Page",
+    description:
+      "Este proyecto es una landing page desarrollada con TypeScript, Next.js, Framer Motion y Tailwind CSS. La página está diseñada para una empresa ficticia de inteligencia artificial, enfocada en ofrecer servicios de mejora de SEO y visibilidad. Utilicé Framer Motion para agregar animaciones suaves y dinámicas, mejorando la interacción del usuario, mientras que Tailwind CSS proporcionó una base estilística rápida y personalizable para asegurar una experiencia visual moderna y atractiva.",
+    link: "https://ai-startup-landing-page-nine.vercel.app/",
+    github: "https://github.com/rogerxm/ai-startup-landing-page",
+    image: "/projects/ai-landing.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
