@@ -1,6 +1,11 @@
 ---
 import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
+import React from "./icons/React.astro";
+import Vite from "./icons/Vite.astro";
+import CSS from "./icons/CSS.astro";
+import FramerMotion from "./icons/FramerMotion.astro";
+import TypeScript from "./icons/TypeScript.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
@@ -11,10 +16,35 @@ const TAGS = {
     class: "bg-black text-white",
     icon: NextJS,
   },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-black text-white",
+    icon: TypeScript,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-black text-white",
+    icon: Vite,
+  },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: CSS,
+  },
+  FRAMERMOTION: {
+    name: "Framer Motion",
+    class: "bg-[#003159] text-white",
+    icon: FramerMotion,
   },
 };
 const PROJECTS = [
@@ -25,7 +55,7 @@ const PROJECTS = [
     link: "https://material-ui-dashboard-nine.vercel.app/",
     github: "https://github.com/rogerxm/material-ui-dashboard",
     image: "/projects/material-ui-dashboard.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.REACT],
   },
   {
     title: "WorldWise App",
@@ -34,7 +64,7 @@ const PROJECTS = [
     link: "https://64f39d9ed2209b2dd1574b53--willowy-queijadas-4438fa.netlify.app/app/cities",
     github: "https://github.com/rogerxm/WorldWiseApp",
     image: "/projects/worldwise-app.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS],
   },
   {
     title: "JavaScript Quizz",
@@ -43,7 +73,7 @@ const PROJECTS = [
     link: "https://javascript-quiz-zustand-gp1prevgp-rogerxms-projects.vercel.app/",
     github: "https://github.com/rogerxm/javascript-quiz-zustand",
     image: "/projects/js-quizz.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE, TAGS.TAILWIND],
   },
 
   {
@@ -53,7 +83,7 @@ const PROJECTS = [
     link: "https://ai-startup-landing-page-nine.vercel.app/",
     github: "https://github.com/rogerxm/ai-startup-landing-page",
     image: "/projects/ai-landing.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.FRAMERMOTION],
   },
 ];
 ---
